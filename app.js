@@ -358,9 +358,15 @@ item.appendChild(glyph);
 
   // --- work ---
   const renderWork = () => {
-    const grid = document.getElementById('work-grid');
-    config.projects.forEach(project => {
-      const item = createEl('div', 'work-item');
+      const grid = document.getElementById('work-grid');
+      config.projects.forEach(project => {
+      const hasLink = project.link && project.link !== '#';
+      const item = createEl(hasLink ? 'a' : 'div', 'work-item');
+      if (hasLink) {
+      item.href = project.link;
+      item.target = '_blank';
+      item.rel = 'noopener noreferrer';
+      }
       const imgContainer = createEl('div', 'work-image');
       const img = createEl('img', '', '');
       img.src = project.image;
@@ -395,13 +401,13 @@ const renderAbout = () => {
     '',
     `I'm the developer behind ${config.site.name}, based in the Philippines.`
   );
-  
+
   const p2 = createEl(
     'p',
     '',
-    `I build modern websites, business systems, and AI-powered automation designed to help businesses operate more efficiently.`
+    `I build modern websites and business systems designed to help businesses establish a strong online presence and operate more efficiently.`
   );
-  
+
   const p3 = createEl(
     'p',
     '',

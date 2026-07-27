@@ -135,39 +135,37 @@ services: [
 ],
 
   // --- PROJECTS ---
-  // WALA PA KANG PROJECTS? Use these placeholders.
-  // Palitan mo lang ng actual projects later.
   projects: [
     {
       title: "TATTOO STUDIO",
       category: "Web Application",
       year: "2026",
-      image: "",
-      description: "Full-stack e-commerce solution with payment integration.",
-      link: "#"
+      image: "assets/images/projects/tattoo.PNG",
+      description: "Tattoo Studio",
+      link: "https://tattoo-studio-demo.netlify.app/"
     },
     {
-      title: "SALON STUDIO",
+      title: "E-COMMERCE PLATFORM",
       category: "Web Application",
       year: "2026",
-      image: "",
-      description: "Inventory and analytics dashboard for SMEs.",
+      image: "assets/images/projects/ecommerce.PNG",
+      description: "",
       link: "#"
     },
     {
       title: "COFFEE SHOP",
       category: "Web Applcation",
       year: "2026",
-      image: "",
-      description: "Modern banking app design with focus on usability.",
+      image: "assets/images/projects/work.PNG",
+      description: "",
       link: "#"
     },
     {
-      title: "E-COMMERCE PLATFORM",
+      title: "BARBER SHOP",
       category: "Web Application",
       year: "2026",
-      image: "",
-      description: "Property listing and management platform.",
+      image: "assets/images/projects/work.PNG",
+      description: "",
       link: "#"
     }
     
