@@ -642,6 +642,7 @@
   font-family: var(--font-heading);
   font-size: 14px;
   overflow: hidden;
+  position: relative;
 }
 
 .work-image img {
