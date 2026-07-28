@@ -357,64 +357,69 @@ item.appendChild(glyph);
 };
 
   // --- work ---
-  const renderWork = () => {
-      const grid = document.getElementById('work-grid');
-      config.projects.forEach(project => {
-      const hasLink = project.link && project.link !== '#';
-      const item = createEl(hasLink ? 'a' : 'div', 'work-item');
-      if (hasLink) {
+const renderWork = () => {
+  const grid = document.getElementById('work-grid');
+  config.projects.forEach(project => {
+    const hasLink = project.link && project.link !== '#';
+    const item = createEl(hasLink ? 'a' : 'div', 'work-item');
+    if (hasLink) {
       item.href = project.link;
       item.target = '_blank';
       item.rel = 'noopener noreferrer';
-      }
-      const imgContainer = createEl('div', 'work-image');
-      const img = createEl('img', '', '');
-      img.src = project.image;
-      img.alt = project.title;
-      img.loading = 'lazy';
-      img.onerror = () => {
-        img.style.display = 'none';
-        imgContainer.textContent = '[ Image Placeholder ]';
-      };
-      imgContainer.appendChild(img);
+    }
+    const imgContainer = createEl('div', 'work-image');
+    const img = createEl('img', '', '');
+    img.src = project.image;
+    img.alt = project.title;
+    img.loading = 'lazy';
+    img.onerror = () => {
+      img.style.display = 'none';
+      imgContainer.textContent = '[ Image Placeholder ]';
+    };
+    imgContainer.appendChild(img);
 
-      const info = createEl('div', 'work-info');
-      const titleRow = createEl('div', 'work-title-row');
+    // --- DEMO BADGE ---
+    if (project.badge === 'demo') {
+      const badge = createEl('span', 'work-badge', 'DEMO');
+      imgContainer.appendChild(badge);
+    }
+    // --- END DEMO BADGE ---
 
-const title = createEl('h3', 'work-title', project.title);
+    const info = createEl('div', 'work-info');
+    const titleRow = createEl('div', 'work-title-row');
 
-titleRow.appendChild(title);
+    const title = createEl('h3', 'work-title', project.title);
 
-if (project.status) {
+    titleRow.appendChild(title);
 
-    const status = createEl(
+    if (project.status) {
+      const status = createEl(
         'span',
         `project-status project-status--${project.status}`
+      );
+
+      status.innerHTML =
+        project.status === "live"
+          ? '<span class="status-dot"></span>LIVE'
+          : '<span class="status-dot"></span>COMING SOON';
+
+      titleRow.appendChild(status);
+    }
+
+    const meta = createEl(
+      'p',
+      'work-meta',
+      `${project.category} / ${project.year}`
     );
 
-    status.innerHTML =
-        project.status === "live"
-            ? '<span class="status-dot"></span>LIVE'
-            : '<span class="status-dot"></span>COMING SOON';
+    info.appendChild(titleRow);
+    info.appendChild(meta);
 
-    titleRow.appendChild(status);
-
-}
-
-const meta = createEl(
-    'p',
-    'work-meta',
-    `${project.category} / ${project.year}`
-);
-
-info.appendChild(titleRow);
-info.appendChild(meta);
-
-      item.appendChild(imgContainer);
-      item.appendChild(info);
-      grid.appendChild(item);
-    });
-  };
+    item.appendChild(imgContainer);
+    item.appendChild(info);
+    grid.appendChild(item);
+  });
+};
 
   // --- about ---
 const renderAbout = () => {

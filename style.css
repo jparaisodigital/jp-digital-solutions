@@ -659,6 +659,27 @@
   filter: blur(0) brightness(1);
 }
 
+/* --- DEMO BADGE --- */
+.work-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  background-color: var(--text);
+  color: var(--inverse);
+
+  padding: 5px 9px;
+
+  pointer-events: none;
+  z-index: 2;
+}
+
 .work-info {
   padding: 24px;
   border-top: 1px solid var(--border);

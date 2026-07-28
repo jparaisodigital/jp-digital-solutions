@@ -137,23 +137,25 @@ services: [
   // --- PROJECTS ---
   projects: [
     {
+      title: "E-COMMERCE PLATFORM",
+      category: "Web Application",
+      year: "2026",
+      image: "assets/images/projects/ecommerce.PNG",
+      description: "",
+      link: "https://dsr3000.netlify.app/",
+      status: "live",
+      badge: "demo"
+    },
+
+    {
       title: "TATTOO STUDIO",
       category: "Web Application",
       year: "2026",
       image: "assets/images/projects/tattoo.PNG",
       description: "Tattoo Studio",
       link: "https://tattoo-studio-demo.netlify.app/",
-      status: "live"
-    },
-
-    {
-      title: "E-COMMERCE PLATFORM",
-      category: "Web Application",
-      year: "2026",
-      image: "assets/images/projects/ecommerce.PNG",
-      description: "",
-      link: "#",
-      status: "coming"
+      status: "live",
+      badge: "demo"
     },
 
     {
@@ -163,7 +165,7 @@ services: [
       image: "assets/images/projects/work.PNG",
       description: "",
       link: "#",
-      status: "coming"
+      status: ""
     },
 
     {
