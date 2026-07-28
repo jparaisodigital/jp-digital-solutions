@@ -159,13 +159,13 @@ services: [
     },
 
     {
-      title: "COFFEE SHOP",
+      title: "Point of Sale (POS) System",
       category: "Web Application",
       year: "2026",
-      image: "assets/images/projects/work.PNG",
+      image: "assets/images/projects/pos.PNG",
       description: "",
       link: "#",
-      status: ""
+      status: "coming"
     },
 
     {
