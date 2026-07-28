@@ -687,6 +687,74 @@
   letter-spacing: 0.05em;
 }
 
+/* ========================================= */
+/* PROJECT STATUS BADGE */
+/* ========================================= */
+
+.work-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.project-status--live {
+  color: #3ddc84;
+}
+
+.project-status--live .status-dot {
+  background: #3ddc84;
+  animation: livePulse 2s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(61,220,132,.35);
+}
+
+.project-status--coming {
+  color: #ffb547;
+}
+
+.project-status--coming .status-dot {
+  background: #ffb547;
+}
+
+@keyframes livePulse {
+
+  0% {
+      transform: scale(.9);
+      opacity: .65;
+  }
+
+  50% {
+      transform: scale(1.15);
+      opacity: 1;
+  }
+
+  100% {
+      transform: scale(.9);
+      opacity: .65;
+  }
+
+}
+
 /* --- Global Animation Utilities --- */
 .section-label {
   /* Override previous margin for animation */

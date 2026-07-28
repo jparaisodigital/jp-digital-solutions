@@ -142,31 +142,38 @@ services: [
       year: "2026",
       image: "assets/images/projects/tattoo.PNG",
       description: "Tattoo Studio",
-      link: "https://tattoo-studio-demo.netlify.app/"
+      link: "https://tattoo-studio-demo.netlify.app/",
+      status: "live"
     },
+
     {
       title: "E-COMMERCE PLATFORM",
       category: "Web Application",
       year: "2026",
       image: "assets/images/projects/ecommerce.PNG",
       description: "",
-      link: "#"
+      link: "#",
+      status: "coming"
     },
+
     {
       title: "COFFEE SHOP",
-      category: "Web Applcation",
+      category: "Web Application",
       year: "2026",
       image: "assets/images/projects/work.PNG",
       description: "",
-      link: "#"
+      link: "#",
+      status: ""
     },
+
     {
       title: "BARBER SHOP",
       category: "Web Application",
       year: "2026",
       image: "assets/images/projects/work.PNG",
       description: "",
-      link: "#"
+      link: "#",
+      status: ""
     }
     
   ],

@@ -379,10 +379,36 @@ item.appendChild(glyph);
       imgContainer.appendChild(img);
 
       const info = createEl('div', 'work-info');
-      const title = createEl('h3', 'work-title', project.title);
-      const meta = createEl('p', 'work-meta', `${project.category} / ${project.year}`);
-      info.appendChild(title);
-      info.appendChild(meta);
+      const titleRow = createEl('div', 'work-title-row');
+
+const title = createEl('h3', 'work-title', project.title);
+
+titleRow.appendChild(title);
+
+if (project.status) {
+
+    const status = createEl(
+        'span',
+        `project-status project-status--${project.status}`
+    );
+
+    status.innerHTML =
+        project.status === "live"
+            ? '<span class="status-dot"></span>LIVE'
+            : '<span class="status-dot"></span>COMING SOON';
+
+    titleRow.appendChild(status);
+
+}
+
+const meta = createEl(
+    'p',
+    'work-meta',
+    `${project.category} / ${project.year}`
+);
+
+info.appendChild(titleRow);
+info.appendChild(meta);
 
       item.appendChild(imgContainer);
       item.appendChild(info);
