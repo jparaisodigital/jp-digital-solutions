@@ -163,7 +163,7 @@ services: [
       image: "assets/images/projects/work.PNG",
       description: "",
       link: "#",
-      status: ""
+      status: "coming"
     },
 
     {
