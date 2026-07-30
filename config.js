@@ -136,13 +136,14 @@ services: [
 
   // --- PROJECTS ---
   projects: [
+
     {
-      title: "E-COMMERCE PLATFORM",
+      title: "Point of Sale (POS) System",
       category: "Web Application",
       year: "2026",
-      image: "assets/images/projects/ecommerce.PNG",
-      description: "",
-      link: "https://dsr3000.netlify.app/",
+      image: "assets/images/projects/pos.PNG",
+      description: "POS/Internal Management Tool",
+      link: "https://jp-demopos.netlify.app/",
       status: "live",
       badge: "demo"
     },
@@ -153,23 +154,26 @@ services: [
       year: "2026",
       image: "assets/images/projects/tattoo.PNG",
       description: "Tattoo Studio",
-      link: "https://tattoo-studio-demo.netlify.app/",
+      link: "https://tattoo-livedemo.netlify.app/",
       status: "live",
       badge: "demo"
     },
 
     {
-      title: "Point of Sale (POS) System",
+      title: "E-COMMERCE PLATFORM",
       category: "Web Application",
       year: "2026",
-      image: "assets/images/projects/pos.PNG",
+      image: "assets/images/projects/ecommerce.PNG",
       description: "",
-      link: "#",
-      status: "coming"
+      link: "https://dsr3000.netlify.app/",
+      status: "coming",
+      badge: "demo"
     },
 
+    
+
     {
-      title: "BARBER SHOP",
+      title: "SALON/BARBER SHOP",
       category: "Web Application",
       year: "2026",
       image: "assets/images/projects/work.PNG",

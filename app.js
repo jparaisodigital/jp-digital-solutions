@@ -464,10 +464,20 @@ const renderAbout = () => {
   stackList.style.color = 'var(--text-muted)';
 
   config.tools.forEach(tool => {
-    const li = createEl('li', '', tool.name);
-    li.style.padding = '8px 0';
-    li.style.borderBottom = '1px solid var(--border)';
+
+    const li = createEl('li', 'stack-item');
+  
+    li.dataset.tool = tool.name;
+  
+    const marker = createEl('span', 'stack-marker');
+  
+    const text = createEl('span', 'stack-text', tool.name);
+  
+    li.appendChild(marker);
+    li.appendChild(text);
+  
     stackList.appendChild(li);
+  
   });
 
   stackCol.appendChild(stackTitle);
@@ -779,18 +789,62 @@ const renderContact = () => {
       }
     });
   };
+  
+// ==========================================
+//   ABOUT TECH STACK ANIMATION SCRIPT
+// ==========================================
+const initTechStackAnimation = () => {
+  const items = document.querySelectorAll('.stack-item');
+  if (!items.length) return;
+
+  const list = items[0].parentElement;
+  list.style.position = 'relative'; // kailangan para ma-anchor yung rail/dot
+
+  // gawin lang ito minsan — idinadagdag yung rail track + dot sa list
+  const track = document.createElement('div');
+  track.className = 'stack-rail-track';
+  const dot = document.createElement('div');
+  dot.className = 'stack-rail-dot';
+  list.appendChild(track);
+  list.appendChild(dot);
+
+  let current = 0;
+
+  const positionDot = (index) => {
+    const item = items[index];
+    const listRect = list.getBoundingClientRect();
+    const itemRect = item.getBoundingClientRect();
+    const y = (itemRect.top - listRect.top) + (itemRect.height / 2) - (dot.offsetHeight / 2);
+    dot.style.transform = `translateY(${y}px)`;
+  };
+
+  const activate = (index) => {
+    items.forEach(item => item.classList.remove('is-active'));
+    items[index].classList.add('is-active');
+    positionDot(index);
+  };
+
+  activate(current);
+
+  setInterval(() => {
+    current = (current + 1) % items.length;
+    activate(current);
+  }, 900);
+};
+
 
     // --- init all ---
     renderNav();
     renderHero();
     renderTools();
-    renderServices();
+    renderServices();   
     renderWork();
     renderAbout();
     renderContact();
     renderFooter();
     initScrollReveal();
     initScrambleEffect();
+    initTechStackAnimation();
   
     // Kick off assembly after a short settle
     setTimeout(runAssemblySequence, 120);
