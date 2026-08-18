@@ -6,6 +6,15 @@
     <meta name="description" content="JPARAISO DIGITAL SOLUTIONS - Full Stack Development & Digital Solutions">
     <title>JPARAISO DIGITAL SOLUTIONS</title>
     
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/projects/fav.png" type="image/png">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="JP Digital Solutions">
+    <meta property="og:description" content="Full Stack Development & Digital Solutions">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
     <!-- --- google fonts --- -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,42 +24,41 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-
+    
     <!-- --- navigation --- -->
     <nav class="nav" id="nav">
       <div class="container nav-container">
         <a href="#home" class="nav-logo">
           <img src="assets/images/projects/logo.png" alt="JP Digital Solutions Logo">
-      </a> 
+        </a> 
         <div class="nav-links" id="nav-links"></div>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-icon"></span>
         </button>
       </div>
     </nav>
-
+    
     <!-- --- hero section --- -->
-  <section id="home" class="hero">
-
-    <!-- --- floating tools + wireframe --- -->
-    <div class="tools-container" id="tools-container">
-      <svg class="wireframe" id="wireframe" xmlns="http://www.w3.org/2000/svg"></svg>
-    </div>
-
-    <div class="container hero-container">
-      <div class="hero-content">
-        <h1 class="hero-title"></h1>
-        <p class="hero-subtitle"></p>
+    <section id="home" class="hero">
+      
+      <!-- --- floating tools + wireframe --- -->
+      <div class="tools-container" id="tools-container">
+        <svg class="wireframe" id="wireframe" xmlns="http://www.w3.org/2000/svg"></svg>
       </div>
-    </div>
-
-    <div class="hero-scroll-indicator">
-      <span class="hero-scroll-line"></span>
-    </div>
-
-  </section>
-
+      
+      <div class="container hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title"></h1>
+          <p class="hero-subtitle"></p>
+        </div>
+      </div>
+      
+      <div class="hero-scroll-indicator">
+        <span class="hero-scroll-line"></span>
+      </div>
+      
+    </section>
+    
     <!-- --- services section --- -->
     <section id="services" class="section services">
       <div class="container">
@@ -58,7 +66,7 @@
         <div class="services-grid" id="services-grid"></div>
       </div>
     </section>
-
+    
     <!-- --- work section --- -->
     <section id="work" class="section work">
       <div class="container">
@@ -66,7 +74,37 @@
         <div class="work-grid" id="work-grid"></div>
       </div>
     </section>
-
+    
+    <!-- --- playground section --- -->
+    <section id="playground" class="section playground">
+      <div class="container">
+        <h2 class="section-label">Playground</h2>
+        
+        <div class="playground-terminal" id="playground-terminal">
+          <!-- Terminal chrome -->
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="terminal-title">debug_squash.exe</span>
+            <span class="terminal-counter" id="squash-counter">squashed: 0 / 10</span>
+          </div>
+          
+          <!-- Bug play area -->
+          <div class="terminal-screen" id="bug-screen">
+            <!-- bugs will be injected by JS -->  
+          </div>
+          
+          <!-- Console log -->
+          <div class="terminal-console" id="squash-console">
+            <div class="console-line">> click the bugs before they multiply_</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <!-- --- about section --- -->
     <section id="about" class="section about">
       <div class="container">
@@ -74,27 +112,25 @@
         <div class="about-content" id="about-content"></div>
       </div>
     </section>
-
+    
     <!-- --- contact section --- -->
     <section id="contact" class="section contact">
       <div class="container">
-    
+        
         <h2 class="section-label">Contact</h2>
-    
+        
         <div class="contact-content" id="contact-content"></div>
-    
-        <div class="contact-socials" id="contact-socials"></div>
-    
+        
       </div>
     </section>
-
+    
     <!-- --- footer --- -->
     <footer class="footer">
       <div class="container footer-container">
         <p class="footer-text"></p>
       </div>
     </footer>
-
+    
     <!-- --- scripts --- -->
     <script src="config.js"></script>
     <script src="app.js"></script>

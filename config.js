@@ -5,7 +5,7 @@
 // ============================================
 
 const config = {
-
+  
   // --- SITE INFO ---
   site: {
     name: "JP DIGITAL SOLUTIONS",
@@ -14,7 +14,7 @@ const config = {
     location: "Philippines",
     tagline: "Properly built. Easily used."
   },
-
+  
   // --- NAVIGATION ---
   nav: [
     { label: "Home", href: "#home" },
@@ -23,12 +23,7 @@ const config = {
     { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" }
   ],
-
-  // --- FLOATING TOOLS ---
-// x,y = position percentage (0-100)
-// size = pixels
-// Add/remove tools by editing this array
-
+  
   // --- FLOATING TOOLS ---
   tools: [
     {
@@ -100,7 +95,7 @@ const config = {
       name: "Netlify",
       src: "assets/images/tools/netlify.svg",
       color:"#00C7B7",
-      position: { desktop: { x: 34, y: 18 }, tablet: { x: 30, y: 85 }, mobile: { x: 20, y: 85 } },
+      position: { desktop: { x: 30, y: 25 }, tablet: { x: 30, y: 85 }, mobile: { x: 25, y: 25 } },
       size: { desktop: 48, tablet: 40, mobile: 36 },
       float: { duration: 5.5, delay: 2.9, amplitude: 11, driftX: 3 }
     },
@@ -108,92 +103,103 @@ const config = {
       name: "Supabase",
       src: "assets/images/tools/supabase.svg",
       color:"#3ECF8E",
-      position: { desktop: { x: 40, y: 84 }, tablet: { x: 45, y: 30 }, mobile: { x: 45, y: 30 } },
+      position: { desktop: { x: 40, y: 84 }, tablet: { x: 45, y: 30 }, mobile: { x: 25, y: 85 } },
       size: { desktop: 54, tablet: 46, mobile: 36 },
       float: { duration: 6.7, delay: 1.0, amplitude: 22, driftX: -6 }
+    },
+    {
+      name: "Tailwind CSS",
+      src: "assets/images/tools/tailwindcss.svg",
+      color: "#38BDF8",
+      position: { desktop: { x: 70, y: 64 }, tablet: { x: 60, y: 55 }, mobile: { x: 45, y: 65 } },
+      size: { desktop: 56, tablet: 46, mobile: 38 }, 
+      float: { duration: 6.4, delay: 1.6, amplitude: 17, driftX: -3 }
     }
   ],
-
+  
   // --- SERVICES ---
-services: [
-  {
-    title: "Web Development",
-    desc: "Fast, responsive, and scalable web applications built with modern technologies."
-  },
-  {
-    title: "UI/UX Design",
-    desc: "Clean, intuitive interfaces designed for optimal user experience."
-  },
-  {
-    title: "Backend Systems",
-    desc: "Robust APIs, database architecture, and server-side solutions."
-  },
-  {
-    title: "Full Stack Solutions",
-    desc: "End-to-end development from concept to deployment."
-  }
-],
-
+  services: [
+    {
+      title: "Web Development",
+      desc: "Fast, responsive, and scalable web applications built with modern technologies."
+    },
+    {
+      title: "UI/UX Design",
+      desc: "Clean, intuitive interfaces designed for optimal user experience."
+    },
+    {
+      title: "Backend Systems",
+      desc: "Robust APIs, database architecture, and server-side solutions."
+    },
+    {
+      title: "Full Stack Solutions",
+      desc: "End-to-end development from concept to deployment."
+    }
+  ],
+  
   // --- PROJECTS ---
   projects: [
-
+    
+    {
+      title: "E-COMMERCE PLATFORM",
+      category: "RIPARADISE Streetwear",
+      year: "2026",
+      image: "assets/images/projects/ecommerce.PNG",
+      imageHover: "assets/images/projects/back1.PNG",
+      description: "Static site with GCash, Messenger integration & same‑day delivery",
+      link: "https://riparadise.netlify.app/",
+      status: "live",
+      badge: ""
+    },
+    
+    {
+      title: "E-COMMERCE PLATFORM",
+      category: "DSR STREETWEAR",
+      year: "2026",
+      image: "assets/images/projects/dsr.PNG",
+      imageHover: "assets/images/projects/back2.PNG",
+      description: "Affordable static e‑commerce with same‑day delivery.",
+      link: "https://dsr3000phworld.com/",
+      status: "live",
+      badge: ""
+    },
+    
     {
       title: "Point of Sale (POS) System",
       category: "Web Application",
       year: "2026",
       image: "assets/images/projects/pos.PNG",
-      description: "POS/Internal Management Tool",
-      link: "https://jp-demopos.netlify.app/",
+      imageHover: "assets/images/projects/back3.PNG",
+      description: "Simple POS with sales, discounts, inventory tracking & database sync.",
+      link: "https://pos-sample-jparaiso.netlify.app/",
       status: "live",
       badge: "demo"
-    },
-
+    },  
+    
     {
-      title: "TATTOO STUDIO",
+      title: "TATTOO SHOP",
       category: "Web Application",
       year: "2026",
       image: "assets/images/projects/tattoo.PNG",
-      description: "Tattoo Studio",
+      imageHover: "assets/images/projects/back4.PNG",
+      description: "Tattoo shop demo with booking and client records.",
       link: "https://tattoo-livedemo.netlify.app/",
       status: "live",
       badge: "demo"
-    },
-
-    {
-      title: "E-COMMERCE PLATFORM",
-      category: "Web Application",
-      year: "2026",
-      image: "assets/images/projects/ecommerce.PNG",
-      description: "",
-      link: "https://dsr3000.netlify.app/",
-      status: "coming",
-      badge: "demo"
-    },
-
-    
-
-    {
-      title: "SALON/BARBER SHOP",
-      category: "Web Application",
-      year: "2026",
-      image: "assets/images/projects/work.PNG",
-      description: "",
-      link: "#",
-      status: ""
     }
     
   ],
-
+  
   // --- DESIGN TOKENS ---
   design: {
     colors: {
-      bg: "#F0EDE8",           // dirty white background
-      bgDark: "#1A1916",       // dark section background
-      text: "#1A1916",         // primary text
-      textMuted: "#6B6860",    // secondary text
-      border: "#D5D0C8",       // borders and dividers
-      accent: "#3D3D3D",       // accent elements
-      inverse: "#F0EDE8"       // text on dark bg
+      bg: "#F0EDE8",          
+      bgDark: "#1A1916",      
+      text: "#1A1916",        
+      textMuted: "#6B6860",    
+      border: "#D5D0C8",       
+      accent: "#3D3D3D",      
+      inverse: "#F0EDE8"       
     },
     fonts: {
       heading: "'Space Grotesk', monospace",
