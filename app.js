@@ -6,6 +6,100 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   
+  // --- Chatbot ---
+ const initChatbot = () => {
+   const btn = document.getElementById('chatbot-btn');
+   const windowEl = document.getElementById('chatbot-window');
+   const closeBtn = document.getElementById('chatbot-close');
+   const messagesEl = document.getElementById('chatbot-messages');
+   const input = document.getElementById('chatbot-input');
+   const sendBtn = document.getElementById('chatbot-send');
+ 
+   if (!btn || !windowEl) return;
+ 
+   // Show button after 6 seconds
+   setTimeout(() => {
+     btn.classList.add('is-visible');
+   }, 6000);
+ 
+   const openChat = () => {
+     // Remove the class first
+     windowEl.classList.remove('is-open');
+   
+     // Force a reflow so the browser forgets the previous animation
+     void windowEl.offsetWidth;
+   
+     // Add it again → animation plays from the start
+     windowEl.classList.add('is-open');
+     btn.classList.add('is-open');
+     input.focus();
+   };
+   
+   const closeChat = () => {
+     windowEl.classList.remove('is-open');
+     btn.classList.remove('is-open');
+   };
+ 
+   btn.addEventListener('click', openChat);
+   closeBtn.addEventListener('click', closeChat);
+ 
+   const addMessage = (text, type) => {
+     const msg = document.createElement('div');
+     msg.className = `chatbot-msg ${type}`;
+     msg.innerHTML = text;
+     messagesEl.appendChild(msg);
+     messagesEl.scrollTop = messagesEl.scrollHeight;
+   };
+ 
+   const sendMessage = async () => {
+    const text = input.value.trim();
+    if (!text) return;
+  
+    addMessage(text, 'user');
+    input.value = '';
+    input.disabled = true;
+    sendBtn.disabled = true;
+  
+    try {
+      const WEBHOOK_URL = 'https://hook.eu1.make.com/3dd6boaspbizge9nppmg3ov5j42baojg';
+  
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ message: text })
+      });
+  
+      if (!response.ok) {
+        // Try to get error details
+        const errorData = await response.text();
+        console.error('Response error:', errorData);
+        throw new Error(`HTTP ${response.status}`);
+      }
+  
+      const data = await response.json();
+      const reply = data.reply || data.message || data.text || 'Sorry, I could not process that.';
+      addMessage(reply, 'bot');
+    } catch (err) {
+      console.error('Fetch error:', err);
+      addMessage('Something went wrong. Please try again or email jparaiso.digital@gmail.com', 'bot');
+    }
+  
+    input.disabled = false;
+    sendBtn.disabled = false;
+    input.focus();
+  };
+   
+   sendBtn.addEventListener('click', sendMessage);
+   input.addEventListener('keydown', (e) => {
+     if (e.key === 'Enter') sendMessage();
+   });
+ };
+ 
+ initChatbot();
+  
   // --- helper ---
   const createEl = (tag, className, text) => {
     const el = document.createElement(tag);

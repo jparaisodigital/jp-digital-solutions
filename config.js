@@ -146,7 +146,7 @@ const config = {
       year: "2026",
       image: "assets/images/projects/ecommerce.PNG",
       imageHover: "assets/images/projects/back1.PNG",
-      description: "Static site with GCash, Messenger integration & same‑day delivery",
+      description: "E-commerce with Supabase database, login/dashboard order tracking, GCash & Messenger integration, and Make.com AI chatbot.",
       link: "https://riparadise.netlify.app/",
       status: "live",
       badge: ""
@@ -163,6 +163,30 @@ const config = {
       status: "live",
       badge: ""
     },
+
+    {
+      title: "E-COMMERCE PLATFORM",
+      category: "ULTI REPS",
+      year: "2026",
+      image: "assets/images/projects/ultireps.PNG",
+      imageHover: "assets/images/projects/back5.PNG",
+      description: "E-commerce with Google Sheets/Apps Script stock & reservation management, Cloudflare Captcha, and manual payment tracking.",
+      link: "https://ultirepsph.com/",
+      status: "live",
+      badge: ""
+    },
+
+    {
+      title: "TATTOO SHOP",
+      category: "Web Application",
+      year: "2026",
+      image: "assets/images/projects/tattoo.PNG",
+      imageHover: "assets/images/projects/back4.PNG",
+      description: "Tattoo shop demo with booking and client records.",
+      link: "https://tattoo-livedemo.netlify.app/",
+      status: "live",
+      badge: "demo"
+    },
     
     {
       title: "Point of Sale (POS) System",
@@ -174,19 +198,19 @@ const config = {
       link: "https://pos-sample-jparaiso.netlify.app/",
       status: "live",
       badge: "demo"
-    },  
-    
+    },
+
     {
-      title: "TATTOO SHOP",
+      title: "SHOPIFY CUSTOM SITE",
       category: "Web Application",
       year: "2026",
-      image: "assets/images/projects/tattoo.PNG",
-      imageHover: "assets/images/projects/back4.PNG",
-      description: "Tattoo shop demo with booking and client records.",
-      link: "https://tattoo-livedemo.netlify.app/",
-      status: "live",
+      image: "assets/images/projects/shopify.PNG",
+      imageHover: "assets/images/projects/back6.PNG",
+      description: "Custom Shopify storefront with tailored theme, checkout, and payment integration.",
+      link: "",
+      status: "pending",
       badge: "demo"
-    }
+    }    
     
   ],
   
